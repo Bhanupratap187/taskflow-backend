@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: taskflow_postgres
+    environment:
+      POSTGRES_USER: taskflow_bhanu
+      POSTGRES_PASSWORD: taskflow_bhanu_password
+      POSTGRES_DB: taskflow_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
